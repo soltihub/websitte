@@ -1,0 +1,25 @@
+<section class="section">
+  <div class="container">
+    <h1>Search</h1>
+    {% if search.performed %}
+      {% if search.results_count > 0 %}
+        <div class="product-grid">
+          {% for item in search.results %}
+            {% if item.object_type == 'product' %}
+              {% render 'product-card', product: item %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% else %}
+        <p>No products matched your search.</p>
+      {% endif %}
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Search",
+  "settings": []
+}
+{% endschema %}

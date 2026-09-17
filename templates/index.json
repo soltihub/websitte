@@ -1,0 +1,72 @@
+{
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "settings": {
+        "text": "UAE delivery in 1–2 business days • Cash on delivery available"
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "menu": "main-menu",
+        "show_language_selector": true
+      }
+    },
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "heading_en": "Everyday tech accessories, made easier.",
+        "heading_ar": "إكسسوارات تقنية تجعل يومك أسهل",
+        "subheading_en": "Practical phone, car, and desk accessories for real daily use across the UAE.",
+        "subheading_ar": "إكسسوارات عملية للهاتف والسيارة والمكتب للاستخدام اليومي في الإمارات.",
+        "button_label_en": "Shop Best Sellers",
+        "button_label_ar": "تسوق الأكثر مبيعاً",
+        "secondary_label_en": "View Bundles",
+        "secondary_label_ar": "شاهد الباقات"
+      }
+    },
+    "trust-bar": {
+      "type": "trust-bar",
+      "settings": {}
+    },
+    "product-grid": {
+      "type": "product-grid",
+      "settings": {
+        "heading_en": "Best sellers for everyday life",
+        "heading_ar": "الأكثر مبيعاً للحياة اليومية",
+        "collection": "all"
+      }
+    },
+    "bundle-banner": {
+      "type": "bundle-banner",
+      "settings": {
+        "heading_en": "Build your setup and save more",
+        "heading_ar": "جهز تجهيزك ووفّر أكثر"
+      }
+    },
+    "reviews": {
+      "type": "reviews",
+      "settings": {}
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {}
+    },
+    "footer": {
+      "type": "footer",
+      "settings": {}
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header",
+    "hero",
+    "trust-bar",
+    "product-grid",
+    "bundle-banner",
+    "reviews",
+    "faq",
+    "footer"
+  ]
+}

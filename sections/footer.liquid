@@ -1,0 +1,53 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a href="{{ routes.root_url }}" class="brand brand-light" aria-label="{{ shop.name }} home">
+        <span class="brand-mark">N</span>
+        <span>NexaGear</span>
+      </a>
+      <p>Practical phone, car, and desk accessories for real daily life in the UAE.</p>
+    </div>
+
+    <div>
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="/collections/all">Best sellers</a></li>
+        <li><a href="/collections/all">Car accessories</a></li>
+        <li><a href="/collections/all">Desk setup</a></li>
+        <li><a href="/collections/all">Bundles</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Support</h4>
+      <ul>
+        <li><a href="/search">Search</a></li>
+        <li><a href="/cart">Cart</a></li>
+        <li><a href="/policy/terms-of-service">Terms</a></li>
+        <li><a href="/policies">Policies</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Follow us</h4>
+      <ul>
+        <li>Instagram</li>
+        <li>TikTok</li>
+        <li>WhatsApp</li>
+        <li>Facebook</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <div>© {{ 'now' | date: '%Y' }} NexaGear UAE</div>
+    <div>Cash on delivery available • AED pricing</div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": []
+}
+{% endschema %}

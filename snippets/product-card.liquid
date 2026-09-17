@@ -1,0 +1,39 @@
+{% liquid
+  assign default_variant = product.selected_or_first_available_variant
+  assign current_price = default_variant.price
+  assign compare_at = default_variant.compare_at_price
+%}
+<article class="product-card">
+  <a href="{{ product.url }}" class="product-link" aria-label="{{ product.title }}">
+    <div class="product-image {{ product.handle | replace: '-', ' ' | truncate: 10, '' | replace: ' ', '-' }}">
+      {% if product.featured_image %}
+        <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.featured_image.alt | escape }}" loading="lazy">
+      {% endif %}
+    </div>
+  </a>
+
+  <div class="product-body">
+    <div class="product-meta">
+      <span class="tag">{{ product.type | default: 'Accessory' }}</span>
+      <span class="star">★★★★★</span>
+    </div>
+
+    <h3 class="product-title"><a href="{{ product.url }}">{{ product.title }}</a></h3>
+    <p class="product-desc">{{ product.description | strip_html | truncate: 90 }}</p>
+
+    <div class="pricing">
+      <span class="price">{{ current_price | money }}</span>
+      {% if compare_at > current_price %}
+        <span class="compare">{{ compare_at | money }}</span>
+      {% endif %}
+    </div>
+
+    <div class="buy-row">
+      <form action="/cart/add" method="post" class="add-to-cart-form">
+        <input type="hidden" name="id" value="{{ default_variant.id }}">
+        <button type="submit">Add to cart</button>
+      </form>
+      <button class="icon-only" type="button" aria-label="Add to wishlist">♡</button>
+    </div>
+  </div>
+</article>

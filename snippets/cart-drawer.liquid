@@ -1,0 +1,38 @@
+<div id="cart-drawer" class="cart-drawer" aria-hidden="true">
+  <div class="cart-drawer-inner">
+    <div class="cart-drawer-header">
+      <h3>Cart</h3>
+      <button type="button" class="cart-close" aria-label="Close cart">×</button>
+    </div>
+
+    <div class="cart-items-wrap" data-cart-items>
+      {% if cart.item_count == 0 %}
+        <p class="cart-empty">Your cart is empty.</p>
+      {% else %}
+        {% for item in cart.items %}
+          <div class="cart-item-row">
+            <div class="cart-item-image">
+              {% if item.image %}
+                <img src="{{ item.image | image_url: width: 160 }}" alt="{{ item.title | escape }}">
+              {% endif %}
+            </div>
+            <div class="cart-item-details">
+              <div class="cart-item-title">{{ item.product.title }}</div>
+              <div class="cart-item-variant">{{ item.variant.title }}</div>
+              <div class="cart-item-price">{{ item.final_line_price | money }}</div>
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <strong>{{ cart.total_price | money }}</strong>
+      </div>
+      <a href="/checkout" class="btn btn-primary cart-checkout">Checkout</a>
+      <a href="/cart" class="btn btn-secondary">View cart</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+{% assign main_menu = section.settings.menu %}
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="{{ routes.root_url }}" class="brand" aria-label="{{ shop.name }} home">
+      <span class="brand-mark">N</span>
+      <span>NexaGear</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle menu">
+      ☰
+    </button>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      {% if main_menu != blank %}
+        {% for link in linklists[main_menu].links %}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        {% endfor %}
+      {% else %}
+        <a href="/collections/all">Shop</a>
+        <a href="/collections/all">Car Accessories</a>
+        <a href="/collections/all">Desk Setup</a>
+        <a href="/collections/all">Bundles</a>
+      {% endif %}
+    </nav>
+
+    <div class="nav-actions">
+      {% if section.settings.show_language_selector %}
+        <button class="lang-toggle active" type="button">EN</button>
+        <button class="lang-toggle" type="button">العربية</button>
+      {% endif %}
+      <button class="cart-toggle" type="button" aria-label="Open cart">
+        Cart (<span data-cart-count>{{ cart.item_count }}</span>)
+      </button>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Main menu"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_language_selector",
+      "label": "Show language selector",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

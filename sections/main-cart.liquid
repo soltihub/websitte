@@ -1,0 +1,50 @@
+<section class="section cart-page-shell">
+  <div class="container cart-layout">
+    <h1>Cart</h1>
+
+    {% if cart.item_count == 0 %}
+      <div class="empty-cart">
+        <p>Your cart is empty.</p>
+        <a class="btn btn-primary" href="{{ routes.all_products_collection_url }}">Continue shopping</a>
+      </div>
+    {% else %}
+      <form action="/cart" method="post" novalidate>
+        <div class="cart-items">
+          {% for item in cart.items %}
+            <div class="cart-item">
+              <div class="cart-media">
+                {% if item.image %}
+                  <img src="{{ item.image | image_url: width: 200 }}" alt="{{ item.title | escape }}" width="120">
+                {% endif %}
+              </div>
+              <div class="cart-info">
+                <h3>{{ item.product.title }}</h3>
+                {% if item.variant.title != 'Default Title' %}
+                  <div>{{ item.variant.title }}</div>
+                {% endif %}
+                <div class="cart-price">{{ item.final_line_price | money }}</div>
+              </div>
+              <div class="cart-controls">
+                <input type="number" name="updates[]" value="{{ item.quantity }}" min="0">
+                <a href="{{ item.url_to_remove }}">Remove</a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <div class="cart-summary">
+          <div>Subtotal: {{ cart.total_price | money }}</div>
+          <button type="submit" name="update" class="btn btn-secondary">Update cart</button>
+          <button type="submit" name="checkout" class="btn btn-primary">Checkout</button>
+        </div>
+      </form>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Main cart",
+  "settings": []
+}
+{% endschema %}

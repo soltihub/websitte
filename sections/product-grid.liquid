@@ -1,0 +1,60 @@
+{% assign collection_handle = section.settings.collection %}
+{% assign collection = collections[collection_handle] %}
+
+<section class="section" id="shop">
+  <div class="container">
+    <div class="section-head">
+      <h2>{{ section.settings.heading_en }}</h2>
+      <a href="{{ collection.url | default: routes.all_products_collection_url }}">Browse all products</a>
+    </div>
+
+    {% if collection != blank and collection.products_count > 0 %}
+      <div class="product-grid">
+        {% for product in collection.products limit: 8 %}
+          {% render 'product-card', product: product %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="product-grid">
+        {% for block in section.blocks %}
+          {% assign product = all_products[block.settings.product] %}
+          {% if product != blank %}
+            {% render 'product-card', product: product %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_en",
+      "label": "Heading (EN)",
+      "default": "Best sellers for everyday life"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,50 @@
+<section class="section bundle-section" id="bundles">
+  <div class="container">
+    <div class="bundle">
+      <div>
+        <h3>{{ section.settings.heading_en }}</h3>
+        <p>Create a cleaner desk, smoother daily commute, and easier workspace with our curated bundles built for UAE lifestyles.</p>
+        <div class="bundle-list">
+          <span>Car kit</span>
+          <span>Desk kit</span>
+          <span>Travel ready</span>
+          <span>Fast charging</span>
+        </div>
+        <a class="btn btn-primary" href="{{ routes.all_products_collection_url }}">Shop Bundles</a>
+      </div>
+
+      <div class="bundle-box">
+        <div class="tag">Bundle savings</div>
+        <h4>Work-from-Anywhere Kit</h4>
+        <div class="bundle-price">
+          <strong>AED 119</strong>
+          <span>AED 147</span>
+        </div>
+        <div>Includes: stand + USB-C cable + webcam cover</div>
+        <div class="buy-row" style="margin-top: 18px;">
+          <button type="button" class="btn btn-primary">Add bundle</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Bundle banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_en",
+      "label": "Heading (EN)",
+      "default": "Build your setup and save more"
+    },
+    {
+      "type": "text",
+      "id": "heading_ar",
+      "label": "Heading (AR)",
+      "default": "جهز تجهيزك ووفّر أكثر"
+    }
+  ]
+}
+{% endschema %}

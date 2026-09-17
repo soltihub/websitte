@@ -1,0 +1,115 @@
+<section class="section hero-section">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <div class="eyebrow">Smart everyday essentials</div>
+      <h1>{{ section.settings.heading_en }}</h1>
+      <p>{{ section.settings.subheading_en }}</p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="{{ routes.all_products_collection_url }}">{{ section.settings.button_label_en }}</a>
+        <a class="btn btn-secondary" href="/collections/all">{{ section.settings.secondary_label_en }}</a>
+      </div>
+
+      <div class="hero-metrics">
+        <div class="metric">
+          <strong>1–2 days</strong>
+          <span>UAE delivery</span>
+        </div>
+        <div class="metric">
+          <strong>COD</strong>
+          <span>Available</span>
+        </div>
+        <div class="metric">
+          <strong>4.9/5</strong>
+          <span>Rated by customers</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-label="Product showcase">
+      <div class="device-card phone-card">
+        <div class="product-preview">
+          <div class="badge">BESTSELLER</div>
+          <div class="phone-screen">
+            <div class="mini-tag">DriveMag Pro</div>
+            <div>
+              <div class="big">Keep it in view</div>
+              <div class="small">3-second setup • 360° rotation</div>
+            </div>
+            <div class="small">Magnetic car mount</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="device-card stand-card">
+        <div class="product-preview">
+          <div class="stand-box">
+            <div class="stand-arm"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="device-card mount-card">
+        <div class="product-preview">
+          <div class="mount-box"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_en",
+      "label": "Heading (EN)",
+      "default": "Everyday tech accessories, made easier."
+    },
+    {
+      "type": "text",
+      "id": "heading_ar",
+      "label": "Heading (AR)",
+      "default": "إكسسوارات تقنية تجعل يومك أسهل"
+    },
+    {
+      "type": "text",
+      "id": "subheading_en",
+      "label": "Subheading (EN)",
+      "default": "Practical phone, car, and desk accessories for real daily use across the UAE."
+    },
+    {
+      "type": "text",
+      "id": "subheading_ar",
+      "label": "Subheading (AR)",
+      "default": "إكسسوارات عملية للهاتف والسيارة والمكتب للاستخدام اليومي في الإمارات."
+    },
+    {
+      "type": "text",
+      "id": "button_label_en",
+      "label": "Primary button (EN)",
+      "default": "Shop Best Sellers"
+    },
+    {
+      "type": "text",
+      "id": "button_label_ar",
+      "label": "Primary button (AR)",
+      "default": "تسوق الأكثر مبيعاً"
+    },
+    {
+      "type": "text",
+      "id": "secondary_label_en",
+      "label": "Secondary button (EN)",
+      "default": "View Bundles"
+    },
+    {
+      "type": "text",
+      "id": "secondary_label_ar",
+      "label": "Secondary button (AR)",
+      "default": "شاهد الباقات"
+    }
+  ]
+}
+{% endschema %}

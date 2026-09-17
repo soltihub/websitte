@@ -1,0 +1,51 @@
+{
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "settings": {}
+    },
+    "header": {
+      "type": "header",
+      "settings": {}
+    },
+    "hero": {
+      "type": "hero",
+      "settings": {}
+    },
+    "trust-bar": {
+      "type": "trust-bar",
+      "settings": {}
+    },
+    "product-grid": {
+      "type": "product-grid",
+      "settings": {}
+    },
+    "bundle-banner": {
+      "type": "bundle-banner",
+      "settings": {}
+    },
+    "reviews": {
+      "type": "reviews",
+      "settings": {}
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {}
+    },
+    "footer": {
+      "type": "footer",
+      "settings": {}
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header",
+    "hero",
+    "trust-bar",
+    "product-grid",
+    "bundle-banner",
+    "reviews",
+    "faq",
+    "footer"
+  ]
+}
